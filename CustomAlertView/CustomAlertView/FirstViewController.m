@@ -7,48 +7,84 @@
 //
 
 #import "FirstViewController.h"
-
+#import "UIColorCategory.h"
+#include "SecondViewController.h"
+#include "CONSTANTS.h"
 @interface FirstViewController ()
 
 @end
 
-
 @implementation FirstViewController
-CustomizeAlertView *customizeAlertView;
 
+CustomizeAlertView *customizeAlertViewFirst;
+UIView *alertViewFirst;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notified:) name:NOTIFICATION_NAME object:nil];
+}
+
+/** Notifies notification object and user information
+* \param notification The notification center object
+ */
+-(void)notified: (NSNotification*)notification{
+    NSLog(@"notified: %@", notification.object);
+    NSLog(@"notified: %@", notification.userInfo);
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+/** Creates alertview and attaches to the view controller
+ */
+-(void)showAlertView{
+    customizeAlertViewFirst = [[CustomizeAlertView alloc]init];
+    customizeAlertViewFirst.delegate = self;
+    [customizeAlertViewFirst createAlertView:@"First View Controller" firstButton:@"yes" secondButton:@"no"];
+    alertViewFirst = [customizeAlertViewFirst getAlertView];
+    alertViewFirst.backgroundColor = [UIColor colorFromHexString:@"#abcdef31"];
+    [self.view addSubview:alertViewFirst];
+}
+
+/** Shows alert view
+ * \param sender The id of the button
+ * \returns Action on button tapped
+ */
 - (IBAction)onTappedShowAlertView:(id)sender {
-    customizeAlertView = [[CustomizeAlertView alloc]init];
-    customizeAlertView.delegate = self;
-    [customizeAlertView createAlertView:@"Hello" firstButton:@"yes" secondButton:@"no"];
-    UIView *alertView = [customizeAlertView getAlertView];
-    [self.view addSubview:alertView];
+    [self showAlertView];
 }
+
+/** Navigates to the next view controller
+ * \param sender The id of the button
+ * \returns Action on button tapped
+ */
+- (IBAction)onTappedUsingBlock:(id)sender {
+    SecondViewController *secondViewController = [self.storyboard instantiateViewControllerWithIdentifier:SECOND_VIEW_CONTROLLER_STORYBOARDNAME];
+    [self.navigationController pushViewController:secondViewController animated:YES];
+}
+
+/** Posts observer notification to the observer
+ */
+-(void)postObserverNotification{
+    NSString *name = @"FirstView Controller";
+    NSDictionary *info = @{@"name":@"first controller"};
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_NAME object:name userInfo:info];
+}
+
+
+/** Overrides the method declared in custom alertview delegate and posts notification
+ */
 -(void)onTappedYes{
     NSLog(@"yes");
+    [self postObserverNotification];
 }
+
+/** Overrides the method declared in custom alertview delegate and dismisses alertview
+ */
 -(void)onTappedNo{
-    NSLog(@"no");
+    NSLog(@"AlertView has been dismissed");
+   [alertViewFirst removeFromSuperview];
 
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

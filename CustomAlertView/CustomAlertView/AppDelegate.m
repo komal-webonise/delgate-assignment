@@ -7,16 +7,20 @@
 //
 
 #import "AppDelegate.h"
-
+#import "CONSTANTS.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+@synthesize window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UIViewController *viewController = [storyBoard instantiateViewControllerWithIdentifier:FIRST_VIEW_CONTROLLER_STORYBOARDNAME];
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    window =[[UIWindow alloc]init];
+    [window setRootViewController:navigationController];
     return YES;
 }
 

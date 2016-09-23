@@ -15,4 +15,6 @@
 @property (nonatomic,strong) id<CustomAlertViewDelegate> delegate;
 -(void)createAlertView:(NSString*)message firstButton:(NSString*)textFirstButton secondButton:(NSString*)textSecondButton;
 -(UIView*)getAlertView;
+-(void)onTappedYesBlock: (void(^)(void))yesBlock;
+-(void)onTappedNoBlock: (void(^)(void))noBlock;
 @end

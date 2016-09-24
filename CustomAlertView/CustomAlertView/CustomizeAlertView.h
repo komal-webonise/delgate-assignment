@@ -12,9 +12,11 @@
 -(void)onTappedNo;
 @end
 @interface CustomizeAlertView : UIView
-@property (nonatomic,strong) id<CustomAlertViewDelegate> delegate;
--(void)createAlertView:(NSString*)message firstButton:(NSString*)textFirstButton secondButton:(NSString*)textSecondButton;
--(UIView*)getAlertView;
--(void)onTappedYesBlock: (void(^)(void))yesBlock;
--(void)onTappedNoBlock: (void(^)(void))noBlock;
+@property (nonatomic,strong) id<CustomAlertViewDelegate> delegateObject;
+@property (nonatomic,strong) NSString* message;
+@property (nonatomic,strong) NSString* firstAlertButton;
+@property (nonatomic,strong) NSString* secondAlertButton;
+-(id)createAlertView;
+-(UIView*)initWithDelegate:(CustomizeAlertView*)viewControllerObject labelMessage:(NSString*)message firstButton:(NSString*)buttonFirstText secondButton:(NSString*)buttonSecondText;
+-(UIView*)initWithBlock:(NSString*)message firstButton:(NSString*)buttonFirstText secondButton:(NSString*)buttonSecondText firstBlock: (void(^)(void))yesBlock  secondBlock:(void(^)(void))noBlock;
 @end

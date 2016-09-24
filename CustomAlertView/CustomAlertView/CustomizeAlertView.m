@@ -7,58 +7,74 @@
 //
 
 #import "CustomizeAlertView.h"
-
+#import "FirstViewController.h"
+typedef void (^blockTypeSelector)(void);
 @implementation CustomizeAlertView
 
-@synthesize delegate;
-UIView *viewAlertView;
+@synthesize delegateObject,firstAlertButton,secondAlertButton,message;
 UIButton *buttonFirstAlert;
-void(^yesBlockSelector)(void);
-void(^noBlockSelector)(void);
+FirstViewController *firstViewController;
+blockTypeSelector yesBlockSelector,noBlockSelector;
+UIView *viewAlert;
 
--(id)init {
+
+-(id)initWithDelegate:(CustomizeAlertView*)viewControllerObject labelMessage:(NSString*)labelText firstButton:(NSString*)buttonFirstText secondButton:(NSString*)buttonSecondText{
     self = [super init];
+    self.delegateObject = (id)viewControllerObject;
+    self.message = labelText;
+    self.firstAlertButton = buttonFirstText;
+    self.secondAlertButton = buttonSecondText;
+    [self createAlertView];
     return self;
+}
+
+-(UIView*)initWithBlock:(NSString*)labelText firstButton:(NSString*)buttonFirstText secondButton:(NSString*)buttonSecondText firstBlock: (void(^)(void))yesBlock  secondBlock:(void(^)(void))noBlock{
+    self = [super init];
+    self.message = labelText;
+    self.firstAlertButton = buttonFirstText;
+    self.secondAlertButton = buttonSecondText;
+    yesBlockSelector = yesBlock;
+    noBlockSelector = noBlock;
+    [self createAlertView];
+    return self;
+
 }
 
 /** Creates view
  * \returns UIView element
  */
--(UIView*)createView{
-    UIView *viewAlert = [[UIView alloc] initWithFrame: CGRectMake(50, 100, 250, 100)];
-    return viewAlert;
+-(void)createView{
+ [self setFrame:CGRectMake(50, 100, 250, 100)];
+ 
 }
 
 /** Creates first alert button
- * \param input Sets text on the button
  * \returns UIButton element
  */
--(UIButton*)createButtonFirst:(NSString*)input{
+-(UIButton*)createButtonFirst{
     UIButton *buttonFirstAlert = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     buttonFirstAlert.frame = CGRectMake(30,65 , 50, 40);
-    [buttonFirstAlert setTitle:input forState:UIControlStateNormal];
+    [buttonFirstAlert setTitle:self.firstAlertButton forState:UIControlStateNormal];
     return buttonFirstAlert;
 }
 
 /** Creates second alert button
- * \param input Sets text on the button
  * \returns UIButton element
  */
--(UIButton*)createButtonSecond:(NSString*)input{
+-(UIButton*)createButtonSecond{
     UIButton *buttonSecondAlert = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     buttonSecondAlert.frame = CGRectMake(70,65 , 50, 40);
-    [buttonSecondAlert setTitle:input forState:UIControlStateNormal];
+    [buttonSecondAlert setTitle:self.secondAlertButton forState:UIControlStateNormal];
     return buttonSecondAlert;
 }
 
 /** Creates label
- * \param message The text to be displayed on label
  * \returns UILabel element
  */
--(UILabel*)createLabel:(NSString*)message{
+-(UILabel*)createLabel{
     UILabel *labelMessage = [[UILabel alloc] initWithFrame: CGRectMake(30,10 , 200, 40)];
     labelMessage.backgroundColor = [UIColor clearColor];
-    labelMessage.text = message;
+    labelMessage.text = self.message;
     return labelMessage;
 }
 
@@ -66,8 +82,8 @@ void(^noBlockSelector)(void);
  * \param sender The id of the button
 */
 -(void)buttonFirstTapped:(id)sender{
-    if ([delegate conformsToProtocol:@protocol(CustomAlertViewDelegate)])
-        [delegate onTappedYes];
+    if ([delegateObject conformsToProtocol:@protocol(CustomAlertViewDelegate)])
+        [delegateObject onTappedYes];
     else
         yesBlockSelector();
 }
@@ -76,8 +92,8 @@ void(^noBlockSelector)(void);
  * \param sender The id of the button
  */
 -(void)buttonSecondTapped:(id)sender{
-    if ([delegate conformsToProtocol:@protocol(CustomAlertViewDelegate)])
-        [delegate onTappedNo];
+    if ([delegateObject conformsToProtocol:@protocol(CustomAlertViewDelegate)])
+        [delegateObject onTappedNo];
     else
         noBlockSelector();
 }
@@ -101,24 +117,17 @@ void(^noBlockSelector)(void);
  * \param textFirstButton Text to be displayed on first button
  * \param textSecondButton Text to be displayed on second button
  */
--(void)createAlertView:(NSString*)message firstButton:(NSString*)textFirstButton secondButton:(NSString*)textSecondButton{
-    UIView *viewAlert = [self createView];
-    UILabel *labelMessage = [self createLabel:message];
-    [viewAlert addSubview:labelMessage];
-    buttonFirstAlert = [self createButtonFirst:textFirstButton];
+-(UIView*)createAlertView{
+    [self createView];
+    UILabel *labelMessage = [self createLabel];
+    [self addSubview:labelMessage];
+    buttonFirstAlert = [self createButtonFirst];
     [buttonFirstAlert addTarget:self action:@selector(buttonFirstTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [viewAlert addSubview:buttonFirstAlert];
-    UIButton *buttonSecondAlert = [self createButtonSecond:textSecondButton];
+    [self addSubview:buttonFirstAlert];
+    UIButton *buttonSecondAlert = [self createButtonSecond];
     [buttonSecondAlert addTarget:self action:@selector(buttonSecondTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [viewAlert addSubview:buttonSecondAlert];
-    viewAlertView = viewAlert;
-}
-
-/** Returns alert view
- * \returns UIView element
- */
--(UIView*)getAlertView{
-    return viewAlertView;
+    [self addSubview:buttonSecondAlert];
+    return viewAlert;
 }
 
 @end

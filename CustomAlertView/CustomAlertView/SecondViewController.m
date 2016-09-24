@@ -16,8 +16,8 @@
 @end
 
 @implementation SecondViewController
-CustomizeAlertView *customizeAlertViewSecond;
-UIView *alertViewSecond;
+CustomizeAlertView *customizeAlertview;
+UIView *alertview;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,20 +38,16 @@ UIView *alertViewSecond;
 /** Creates alertview, attaches to the view controller and defines action for alert buttons
  */
 -(void)showAlertViewWithBlock{
-    customizeAlertViewSecond = [[CustomizeAlertView alloc]init];
-    [customizeAlertViewSecond createAlertView:@"Second View Controller" firstButton:@"yes" secondButton:@"no"];
-    [customizeAlertViewSecond onTappedYesBlock:^{
+    customizeAlertview = [[CustomizeAlertView alloc]initWithBlock:@"Second View Controller" firstButton:@"yes" secondButton:@"no" firstBlock:^{
         NSLog(@"yes block");
         [self postObserverNotification];
-    }];
-    [customizeAlertViewSecond onTappedNoBlock:^{
+    } secondBlock:^{
         NSLog(@"no block");
         NSLog(@"AlertView has been dismissed");
-        [alertViewSecond removeFromSuperview];
+        [customizeAlertview removeFromSuperview];
     }];
-    alertViewSecond = [customizeAlertViewSecond getAlertView];
-    alertViewSecond.backgroundColor = [UIColor colorFromHexString:@"#ff0033"];
-    [self.view addSubview:alertViewSecond];
+    customizeAlertview.backgroundColor = [UIColor colorFromHexString:@"#ff0033"];
+    [self.view addSubview:customizeAlertview];
 }
 
 /** Shows alert view

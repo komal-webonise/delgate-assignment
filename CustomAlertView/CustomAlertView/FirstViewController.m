@@ -16,8 +16,9 @@
 
 @implementation FirstViewController
 
-CustomizeAlertView *customizeAlertViewFirst;
-UIView *alertViewFirst;
+CustomizeAlertView *customizeAlertView;
+UIView *alertView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notified:) name:NOTIFICATION_NAME object:nil];
@@ -38,12 +39,9 @@ UIView *alertViewFirst;
 /** Creates alertview and attaches to the view controller
  */
 -(void)showAlertView{
-    customizeAlertViewFirst = [[CustomizeAlertView alloc]init];
-    customizeAlertViewFirst.delegate = self;
-    [customizeAlertViewFirst createAlertView:@"First View Controller" firstButton:@"yes" secondButton:@"no"];
-    alertViewFirst = [customizeAlertViewFirst getAlertView];
-    alertViewFirst.backgroundColor = [UIColor colorFromHexString:@"#abcdef31"];
-    [self.view addSubview:alertViewFirst];
+    customizeAlertView = [[CustomizeAlertView alloc]initWithDelegate:self labelMessage:@"First View Controller" firstButton:@"yes" secondButton:@"no"];
+    customizeAlertView.backgroundColor = [UIColor colorFromHexString:@"#abcdef31"];
+    [self.view addSubview:customizeAlertView];
 }
 
 /** Shows alert view
@@ -83,7 +81,7 @@ UIView *alertViewFirst;
  */
 -(void)onTappedNo{
     NSLog(@"AlertView has been dismissed");
-   [alertViewFirst removeFromSuperview];
+   [customizeAlertView removeFromSuperview];
 
 }
 

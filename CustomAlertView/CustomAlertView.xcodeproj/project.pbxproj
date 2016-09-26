@@ -7,35 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F43431841D935C30004CFBD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F43431831D935C30004CFBD3 /* main.m */; };
 		F43431871D935C30004CFBD3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F43431861D935C30004CFBD3 /* AppDelegate.m */; };
 		F434318D1D935C30004CFBD3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F434318B1D935C30004CFBD3 /* Main.storyboard */; };
 		F434318F1D935C30004CFBD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F434318E1D935C30004CFBD3 /* Assets.xcassets */; };
 		F43431921D935C30004CFBD3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43431901D935C30004CFBD3 /* LaunchScreen.storyboard */; };
-		F434319B1D935C5D004CFBD3 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F434319A1D935C5D004CFBD3 /* FirstViewController.m */; };
-		F434319E1D935CBF004CFBD3 /* CustomizeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F434319D1D935CBF004CFBD3 /* CustomizeAlertView.m */; };
-		F43552F01D946B100057709F /* UIColorCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F43552EF1D946B100057709F /* UIColorCategory.m */; };
-		F43552F61D948E290057709F /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F43552F51D948E290057709F /* SecondViewController.m */; };
+		F4D278FB1D99E807000E33D3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4D278FA1D99E807000E33D3 /* Info.plist */; };
+		F4D278FE1D99E83A000E33D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D278FD1D99E83A000E33D3 /* main.m */; };
+		F4D279031D99E859000E33D3 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D279001D99E859000E33D3 /* FirstViewController.m */; };
+		F4D279041D99E859000E33D3 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D279021D99E859000E33D3 /* SecondViewController.m */; };
+		F4D279081D99E89A000E33D3 /* UIColorCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D279071D99E89A000E33D3 /* UIColorCategory.m */; };
+		F4D2790C1D99E8C7000E33D3 /* CustomizeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D2790B1D99E8C7000E33D3 /* CustomizeAlertView.m */; };
+		F4D279111D99E911000E33D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4D279101D99E911000E33D3 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F434317F1D935C30004CFBD3 /* CustomAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F43431831D935C30004CFBD3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F43431851D935C30004CFBD3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F43431861D935C30004CFBD3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F434318C1D935C30004CFBD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F434318E1D935C30004CFBD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F43431911D935C30004CFBD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F43431931D935C30004CFBD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F43431991D935C5D004CFBD3 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		F434319A1D935C5D004CFBD3 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		F434319C1D935CBF004CFBD3 /* CustomizeAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomizeAlertView.h; sourceTree = "<group>"; };
-		F434319D1D935CBF004CFBD3 /* CustomizeAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomizeAlertView.m; sourceTree = "<group>"; };
-		F43552EE1D946B100057709F /* UIColorCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColorCategory.h; sourceTree = "<group>"; };
-		F43552EF1D946B100057709F /* UIColorCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColorCategory.m; sourceTree = "<group>"; };
-		F43552F41D948E290057709F /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		F43552F51D948E290057709F /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		F43552F71D94A2340057709F /* CONSTANTS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONSTANTS.h; sourceTree = "<group>"; };
+		F4D278FA1D99E807000E33D3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CommonFiles/Info.plist; sourceTree = "<group>"; };
+		F4D278FD1D99E83A000E33D3 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CommonFiles/main.m; sourceTree = "<group>"; };
+		F4D278FF1D99E859000E33D3 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstViewController.h; path = ViewControllers/FirstViewController.h; sourceTree = "<group>"; };
+		F4D279001D99E859000E33D3 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstViewController.m; path = ViewControllers/FirstViewController.m; sourceTree = "<group>"; };
+		F4D279011D99E859000E33D3 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SecondViewController.h; path = ViewControllers/SecondViewController.h; sourceTree = "<group>"; };
+		F4D279021D99E859000E33D3 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SecondViewController.m; path = ViewControllers/SecondViewController.m; sourceTree = "<group>"; };
+		F4D279061D99E89A000E33D3 /* UIColorCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIColorCategory.h; path = Category/UIColorCategory.h; sourceTree = "<group>"; };
+		F4D279071D99E89A000E33D3 /* UIColorCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIColorCategory.m; path = Category/UIColorCategory.m; sourceTree = "<group>"; };
+		F4D2790A1D99E8C7000E33D3 /* CustomizeAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomizeAlertView.h; path = Views/CustomizeAlertView.h; sourceTree = "<group>"; };
+		F4D2790B1D99E8C7000E33D3 /* CustomizeAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomizeAlertView.m; path = Views/CustomizeAlertView.m; sourceTree = "<group>"; };
+		F4D2790E1D99E8E5000E33D3 /* CONSTANTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CONSTANTS.h; path = Constants/CONSTANTS.h; sourceTree = "<group>"; };
+		F4D279101D99E911000E33D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,7 @@
 		F43431761D935C30004CFBD3 = {
 			isa = PBXGroup;
 			children = (
+				F4D279101D99E911000E33D3 /* Default-568h@2x.png */,
 				F43431811D935C30004CFBD3 /* CustomAlertView */,
 				F43431801D935C30004CFBD3 /* Products */,
 			);
@@ -68,22 +72,17 @@
 		F43431811D935C30004CFBD3 /* CustomAlertView */ = {
 			isa = PBXGroup;
 			children = (
+				F4D2790F1D99E8EE000E33D3 /* Constants */,
+				F4D2790D1D99E8CE000E33D3 /* Views */,
+				F4D279091D99E8A5000E33D3 /* Category */,
+				F4D279051D99E868000E33D3 /* ViewControllers */,
+				F4D278FC1D99E80F000E33D3 /* CommonFiles */,
 				F43431851D935C30004CFBD3 /* AppDelegate.h */,
 				F43431861D935C30004CFBD3 /* AppDelegate.m */,
 				F434318B1D935C30004CFBD3 /* Main.storyboard */,
 				F434318E1D935C30004CFBD3 /* Assets.xcassets */,
 				F43431901D935C30004CFBD3 /* LaunchScreen.storyboard */,
-				F43431931D935C30004CFBD3 /* Info.plist */,
 				F43431821D935C30004CFBD3 /* Supporting Files */,
-				F43431991D935C5D004CFBD3 /* FirstViewController.h */,
-				F434319A1D935C5D004CFBD3 /* FirstViewController.m */,
-				F434319C1D935CBF004CFBD3 /* CustomizeAlertView.h */,
-				F434319D1D935CBF004CFBD3 /* CustomizeAlertView.m */,
-				F43552EE1D946B100057709F /* UIColorCategory.h */,
-				F43552EF1D946B100057709F /* UIColorCategory.m */,
-				F43552F41D948E290057709F /* SecondViewController.h */,
-				F43552F51D948E290057709F /* SecondViewController.m */,
-				F43552F71D94A2340057709F /* CONSTANTS.h */,
 			);
 			path = CustomAlertView;
 			sourceTree = "<group>";
@@ -91,9 +90,54 @@
 		F43431821D935C30004CFBD3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F43431831D935C30004CFBD3 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4D278FC1D99E80F000E33D3 /* CommonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F4D278FD1D99E83A000E33D3 /* main.m */,
+				F4D278FA1D99E807000E33D3 /* Info.plist */,
+			);
+			name = CommonFiles;
+			sourceTree = "<group>";
+		};
+		F4D279051D99E868000E33D3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F4D278FF1D99E859000E33D3 /* FirstViewController.h */,
+				F4D279001D99E859000E33D3 /* FirstViewController.m */,
+				F4D279011D99E859000E33D3 /* SecondViewController.h */,
+				F4D279021D99E859000E33D3 /* SecondViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F4D279091D99E8A5000E33D3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F4D279061D99E89A000E33D3 /* UIColorCategory.h */,
+				F4D279071D99E89A000E33D3 /* UIColorCategory.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		F4D2790D1D99E8CE000E33D3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F4D2790A1D99E8C7000E33D3 /* CustomizeAlertView.h */,
+				F4D2790B1D99E8C7000E33D3 /* CustomizeAlertView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F4D2790F1D99E8EE000E33D3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F4D2790E1D99E8E5000E33D3 /* CONSTANTS.h */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,8 +197,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D278FB1D99E807000E33D3 /* Info.plist in Resources */,
 				F43431921D935C30004CFBD3 /* LaunchScreen.storyboard in Resources */,
 				F434318F1D935C30004CFBD3 /* Assets.xcassets in Resources */,
+				F4D279111D99E911000E33D3 /* Default-568h@2x.png in Resources */,
 				F434318D1D935C30004CFBD3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,11 +213,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F43431871D935C30004CFBD3 /* AppDelegate.m in Sources */,
-				F43431841D935C30004CFBD3 /* main.m in Sources */,
-				F43552F61D948E290057709F /* SecondViewController.m in Sources */,
-				F43552F01D946B100057709F /* UIColorCategory.m in Sources */,
-				F434319B1D935C5D004CFBD3 /* FirstViewController.m in Sources */,
-				F434319E1D935CBF004CFBD3 /* CustomizeAlertView.m in Sources */,
+				F4D279031D99E859000E33D3 /* FirstViewController.m in Sources */,
+				F4D279081D99E89A000E33D3 /* UIColorCategory.m in Sources */,
+				F4D279041D99E859000E33D3 /* SecondViewController.m in Sources */,
+				F4D278FE1D99E83A000E33D3 /* main.m in Sources */,
+				F4D2790C1D99E8C7000E33D3 /* CustomizeAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CustomAlertView/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CustomAlertView/CommonFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.webonise.CustomAlertView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -296,7 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CustomAlertView/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CustomAlertView/CommonFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.webonise.CustomAlertView;
 				PRODUCT_NAME = "$(TARGET_NAME)";

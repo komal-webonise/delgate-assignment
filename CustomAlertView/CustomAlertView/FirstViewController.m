@@ -17,7 +17,6 @@
 @implementation FirstViewController
 
 CustomizeAlertView *customizeAlertView;
-UIView *alertView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -70,11 +69,12 @@ UIView *alertView;
 }
 
 
-/** Overrides the method declared in custom alertview delegate and posts notification
+/** Overrides the method declared in custom alertview delegate,posts notification and dismisses alertview
  */
 -(void)onTappedYes{
     NSLog(@"yes");
     [self postObserverNotification];
+    [customizeAlertView removeFromSuperview];
 }
 
 /** Overrides the method declared in custom alertview delegate and dismisses alertview
@@ -82,7 +82,6 @@ UIView *alertView;
 -(void)onTappedNo{
     NSLog(@"AlertView has been dismissed");
    [customizeAlertView removeFromSuperview];
-
 }
 
 @end

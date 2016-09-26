@@ -9,30 +9,36 @@
 #import "CustomizeAlertView.h"
 #import "FirstViewController.h"
 typedef void (^blockTypeSelector)(void);
+@interface CustomizeAlertView(){
+NSString *firstAlertButton, *secondAlertButton, *message;
+}
+@end
+
 @implementation CustomizeAlertView
 
-@synthesize delegateObject,firstAlertButton,secondAlertButton,message;
+@synthesize delegateObject;
+
 UIButton *buttonFirstAlert;
 FirstViewController *firstViewController;
 blockTypeSelector yesBlockSelector,noBlockSelector;
 UIView *viewAlert;
 
 
--(id)initWithDelegate:(CustomizeAlertView*)viewControllerObject labelMessage:(NSString*)labelText firstButton:(NSString*)buttonFirstText secondButton:(NSString*)buttonSecondText{
+-(id)initWithDelegate:(id)viewControllerObject labelMessage:(NSString*)labelText firstButton:(NSString*)buttonFirstText secondButton:(NSString*)buttonSecondText{
     self = [super init];
     self.delegateObject = (id)viewControllerObject;
-    self.message = labelText;
-    self.firstAlertButton = buttonFirstText;
-    self.secondAlertButton = buttonSecondText;
+    self->message = labelText;
+    self->firstAlertButton = buttonFirstText;
+    self->secondAlertButton = buttonSecondText;
     [self createAlertView];
     return self;
 }
 
 -(UIView*)initWithBlock:(NSString*)labelText firstButton:(NSString*)buttonFirstText secondButton:(NSString*)buttonSecondText firstBlock: (void(^)(void))yesBlock  secondBlock:(void(^)(void))noBlock{
     self = [super init];
-    self.message = labelText;
-    self.firstAlertButton = buttonFirstText;
-    self.secondAlertButton = buttonSecondText;
+    self->message = labelText;
+    self->firstAlertButton = buttonFirstText;
+    self->secondAlertButton = buttonSecondText;
     yesBlockSelector = yesBlock;
     noBlockSelector = noBlock;
     [self createAlertView];
@@ -54,7 +60,7 @@ UIView *viewAlert;
 -(UIButton*)createButtonFirst{
     UIButton *buttonFirstAlert = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     buttonFirstAlert.frame = CGRectMake(30,65 , 50, 40);
-    [buttonFirstAlert setTitle:self.firstAlertButton forState:UIControlStateNormal];
+    [buttonFirstAlert setTitle:self->firstAlertButton forState:UIControlStateNormal];
     return buttonFirstAlert;
 }
 
@@ -64,7 +70,7 @@ UIView *viewAlert;
 -(UIButton*)createButtonSecond{
     UIButton *buttonSecondAlert = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     buttonSecondAlert.frame = CGRectMake(70,65 , 50, 40);
-    [buttonSecondAlert setTitle:self.secondAlertButton forState:UIControlStateNormal];
+    [buttonSecondAlert setTitle:self->secondAlertButton forState:UIControlStateNormal];
     return buttonSecondAlert;
 }
 
@@ -74,7 +80,7 @@ UIView *viewAlert;
 -(UILabel*)createLabel{
     UILabel *labelMessage = [[UILabel alloc] initWithFrame: CGRectMake(30,10 , 200, 40)];
     labelMessage.backgroundColor = [UIColor clearColor];
-    labelMessage.text = self.message;
+    labelMessage.text = self->message;
     return labelMessage;
 }
 

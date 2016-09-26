@@ -17,7 +17,6 @@
 
 @implementation SecondViewController
 CustomizeAlertView *customizeAlertview;
-UIView *alertview;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,6 +40,7 @@ UIView *alertview;
     customizeAlertview = [[CustomizeAlertView alloc]initWithBlock:@"Second View Controller" firstButton:@"yes" secondButton:@"no" firstBlock:^{
         NSLog(@"yes block");
         [self postObserverNotification];
+        [customizeAlertview removeFromSuperview];
     } secondBlock:^{
         NSLog(@"no block");
         NSLog(@"AlertView has been dismissed");
